@@ -10,19 +10,21 @@ $result = $conn->query("SELECT * FROM users ORDER BY id DESC");
 
 <head>
     <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
     <a href="add.html">Add New Data</a><br /><br />
 
-    <table width='80%' border=0 class="table">
+    <table class="table table-striped-columns">
 
-        <tr bgcolor='#CCCCCC'>
+        <thead>
             <td>Name</td>
             <td>Age</td>
             <td>Email</td>
             <td>Update</td>
-        </tr>
+        </thead>
         <?php 	
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		
 		echo "<tr>";
@@ -33,6 +35,9 @@ $result = $conn->query("SELECT * FROM users ORDER BY id DESC");
 	}
 	?>
     </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

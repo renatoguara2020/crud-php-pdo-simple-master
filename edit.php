@@ -63,6 +63,8 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 
 <head>
     <title>Edit Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
@@ -70,25 +72,28 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
     <br /><br />
 
     <form name="form1" method="post" action="edit.php">
-        <table border="0">
+        <table class='table table-striped'>
             <tr>
                 <td>Name</td>
-                <td><input type="text" name="name" value="<?php echo $name;?>"></td>
+                <td><input type="text" class="form-control" name="name" value="<?php echo $name;?>"></td>
             </tr>
             <tr>
                 <td>Age</td>
-                <td><input type="text" name="age" value="<?php echo $age;?>"></td>
+                <td><input type="text" class="form-control" name="age" value="<?php echo $age;?>"></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="text" name="email" value="<?php echo $email;?>"></td>
+                <td><input type="text" class="form-control" name="email" value="<?php echo $email;?>"></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
+                <td><input type="submit" name="update" value="Update" class="btn btn-warning"></td>
             </tr>
         </table>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
