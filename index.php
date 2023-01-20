@@ -17,13 +17,13 @@ $result = $conn->query("SELECT * FROM users ORDER BY id DESC");
 <body>
     <a href="add.html">Add New Data</a><br /><br />
 
-    <table class="table table-striped-columns">
+    <table class="table table-striped table-hover">
 
         <thead>
-            <td>Name</td>
-            <td>Age</td>
-            <td>Email</td>
-            <td>Update</td>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Update</th>
         </thead>
         <?php 	
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		

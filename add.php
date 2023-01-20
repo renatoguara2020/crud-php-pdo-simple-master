@@ -7,7 +7,8 @@
 </head>
 
 <body>
-    <?php
+    <div class="container" width="100%">
+        <?php
 //including the database connection file
 include_once("config.php");
 
@@ -49,11 +50,12 @@ if(isset($_POST['Submit'])) {
 		// $query->execute(array(':name' => $name, ':email' => $email, ':age' => $age));
 		
 		//display success message
-		echo "<font color='green'>Data added successfully.";
+		echo "<div class='alert alert-success'>Data added successfully.</div>";
 		echo "<br/><a href='index.php'>View Result</a>";
 	}
 }
 ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
