@@ -14,10 +14,10 @@
 include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
-	//$name = $_POST['name'];
+	
 	$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-	$age = $_POST['age'];
-	$email = $_POST['email'];
+	$age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
+	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 		
 	// checking empty fields
 	if(empty($name) || empty($age) || empty($email)) {
