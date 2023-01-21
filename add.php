@@ -59,11 +59,11 @@ if(isset($_POST['Submit'])) {
 		$stmt = $conn->prepare("INSERT INTO users(name, age, email, estados, cidade) VALUES(:name, :age, :email, :estados, :cidade)"); 
 		$conn->exec("set names utf8mb4");
 				
-		$stmt->bindparam(':name', $name);
-		$stmt->bindparam(':age', $age);
-		$stmt->bindparam(':email', $email);
-		$stmt->bindparam(':estados', $estados);
-		$stmt->bindparam(':cidade', $cidade);
+		$stmt->bindparam(':name', $name, PDO::PARAM_STR);
+		$stmt->bindparam(':age', $age, PDO::PARAM_INT);
+		$stmt->bindparam(':email', $email, PDO::PARAM_STR);
+		$stmt->bindparam(':estados', $estados, PDO::PARAM_STR);
+		$stmt->bindparam(':cidade', $cidade, PDO::PARAM_STR);
 		$stmt->execute();
 		
 		// Alternative to above bindparam and execute
