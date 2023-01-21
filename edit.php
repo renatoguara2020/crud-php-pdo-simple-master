@@ -9,9 +9,11 @@ if(isset($_POST['update']))
 	$name=$_POST['name'];
 	$age=$_POST['age'];
 	$email=$_POST['email'];	
+	//$estado = $_POST['estado'];
+	$cidade = $_POST['cidade'];
 	
 	// checking empty fields
-	if(empty($name) || empty($age) || empty($email)) {	
+	if(empty($name) || empty($age) || empty($email) || empty($cidade)) {	
 			
 		if(empty($name)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
@@ -23,16 +25,21 @@ if(isset($_POST['update']))
 		
 		if(empty($email)) {
 			echo "<font color='red'>Email field is empty.</font><br/>";
+		}
+		if(empty($cidade)) {
+
+			echo "<font color='red'> Cidade field is empty.</font><br/>";
 		}		
 	} else {	
 		//updating the table
-		$sql = "UPDATE users SET name=:name, age=:age, email=:email WHERE id=:id";
+		$sql = "UPDATE users SET name=:name, age=:age, email=:email, cidade=:cidade WHERE id=:id";
 		$query = $conn->prepare($sql);
 				
 		$query->bindparam(':id', $id);
 		$query->bindparam(':name', $name);
 		$query->bindparam(':age', $age);
 		$query->bindparam(':email', $email);
+		$query->bindparam(':cidade', $cidade);
 		$query->execute();
 		
 		// Alternative to above bindparam and execute
@@ -84,8 +91,9 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 
             <label class="form-label">Email</label>
             <input type="text" class="form-control" name="email" value="<?php echo $email;?>">
+
             <label class="form-label">Cidade</label>
-            <input type="text" class="form-control" name="email" value="<?php echo $cidade;?>">
+            <input type="text" class="form-control" name="cidade" value="<?php echo $cidade;?>">
 
 
             <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
