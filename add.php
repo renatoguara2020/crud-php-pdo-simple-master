@@ -40,13 +40,13 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database		
-		$sql = "INSERT INTO users(name, age, email) VALUES(:name, :age, :email)";
-		$query = $conn->prepare($sql);
+		$stmt = $conn->prepare("INSERT INTO users(name, age, email) VALUES(:name, :age, :email)");
+		$conn->exec("set names utf8mb4");
 				
-		$query->bindparam(':name', $name);
-		$query->bindparam(':age', $age);
-		$query->bindparam(':email', $email);
-		$query->execute();
+		$stmt->bindparam(':name', $name);
+		$stmt->bindparam(':age', $age);
+		$stmt->bindparam(':email', $email);
+		$stmt->execute();
 		
 		// Alternative to above bindparam and execute
 		// $query->execute(array(':name' => $name, ':email' => $email, ':age' => $age));
