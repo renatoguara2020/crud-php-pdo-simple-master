@@ -23,15 +23,22 @@ if(isset($_POST['Submit'])) {
 	if(empty($name) || empty($age) || empty($email)) {
 				
 		if(empty($name)) {
-			echo "<font color='red'>Name field is empty.</font><br/>";
+			
+			echo '<div class="alert alert-danger" role="alert">
+			          Name field is empty
+		          </div>';
 		}
 		
 		if(empty($age)) {
-			echo "<font color='red'>Age field is empty.</font><br/>";
+			echo '<div class="alert alert-danger" role="alert">
+			          Age field is empty
+		          </div>';
 		}
 		
 		if(empty($email)) {
-			echo "<font color='red'>Email field is empty.</font><br/>";
+			echo '<div class="alert alert-danger" role="alert">
+			          Email field is empty
+		          </div>';
 		}
 		
 		//link to the previous page
