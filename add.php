@@ -14,7 +14,8 @@
 include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
-	$name = $_POST['name'];
+	//$name = $_POST['name'];
+	$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
 	$age = $_POST['age'];
 	$email = $_POST['email'];
 		
