@@ -16,21 +16,21 @@
     <form action="add.php" method="post" name="form1">
       <div class="container">
 		<div class="row">
-        <div class="col-md-2">
+        <div class="col-md-12">
           <label class="form-label">Nome:</label>
           <input type="text" name="name" class="form-control" />
         </div>
-        <div class="col-md-2">
+        <div class="col-md-12">
           <label class="form-label">Idade:</label>
           <input type="text" name="age" class="form-control" />
         </div>
-        <div class="col-md-2">
+        <div class="col-md-12">
           <label class="form-label">Email:</label>
           <input type="text" name="email" class="form-control" /><br><br>
-        <div>
-			
+		</div>
+			<div class="col-md-6">
 				<label class="form-label">Estados:</label>
-				<select id="UF" name="UF" class="form-select form-select-sm">
+				<select id="UF" class="form-select form-select-sm" name="estados">
 					<option value="">Selecione</option>
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
@@ -60,15 +60,23 @@
 					<option value="SE">Sergipe</option>
 					<option value="TO">Tocantins</option>
 				</select>
+			</div>	
+			<div class="col-md-6">
+				<label for="validationCustom03" class="form-label">City</label>
+				<input type="text" class="form-control" name="cidade" placeholder="Digite sua cidade">
+				  
+				</div>
 				<br><br>
-			  <div>
-		
+			<div class="d-grid gap-2 d-md-block">	
+				<input align="left" type="submit" name="Submit" value="Add" class="btn btn-outline-success"/>
+			</div>
+				
+		    
 		</div>
           
-            <input type="submit" name="Submit" value="Add" class="btn btn-success "/>
-          </td>
-        </tr>
-      </table>
+          
+        
+    
     </form>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

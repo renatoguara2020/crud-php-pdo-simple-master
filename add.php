@@ -18,9 +18,11 @@ if(isset($_POST['Submit'])) {
 	$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
 	$age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
 	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+	$estados = filter_input(INPUT_POST, 'estados', FILTER_SANITIZE_SPECIAL_CHARS);
+	$cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
 		
 	// checking empty fields
-	if(empty($name) || empty($age) || empty($email)) {
+	if(empty($name) || empty($age) || empty($email) || empty($cidade)) {
 				
 		if(empty($name)) {
 			
@@ -40,6 +42,13 @@ if(isset($_POST['Submit'])) {
 			          Email field is empty
 		          </div>';
 		}
+		if(empty($cidade)) {
+             
+			echo '<div class="alert alert-danger" role="alert">
+			          Cidade field is empty
+                   </div>';    
+			
+		}
 		
 		//link to the previous page
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
@@ -47,12 +56,14 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database		
-		$stmt = $conn->prepare("INSERT INTO users(name, age, email) VALUES(:name, :age, :email)");
+		$stmt = $conn->prepare("INSERT INTO users(name, age, email, estados, cidade) VALUES(:name, :age, :email, :estados, :cidade)"); 
 		$conn->exec("set names utf8mb4");
 				
 		$stmt->bindparam(':name', $name);
 		$stmt->bindparam(':age', $age);
 		$stmt->bindparam(':email', $email);
+		$stmt->bindparam(':estados', $estados);
+		$stmt->bindparam(':cidade', $cidade);
 		$stmt->execute();
 		
 		// Alternative to above bindparam and execute
