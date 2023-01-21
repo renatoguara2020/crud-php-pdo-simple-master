@@ -82,22 +82,22 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
     <form name="form1" method="post" action="edit.php">
 
         <label class="form-label">Name</label>
-        <<input type="text" class="form-control" name="name" value="<?php echo $name;?>">
+        <input type="text" class="form-control" name="name" value="<?php echo $name;?>">
 
 
-            <label class="form-label">Age</label>
-            <input type="text" class="form-control" name="age" value="<?php echo $age;?>">
+        <label class="form-label">Age</label>
+        <input type="text" class="form-control" name="age" value="<?php echo $age;?>">
 
 
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" name="email" value="<?php echo $email;?>">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" value="<?php echo $email;?>">
 
-            <label class="form-label">Cidade</label>
-            <input type="text" class="form-control" name="cidade" value="<?php echo $cidade;?>">
+        <label class="form-label">Cidade</label>
+        <input type="text" class="form-control" name="cidade" value="<?php echo $cidade;?>">
 
 
-            <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
-            <input type="submit" name="update" value="Update" class="btn btn-warning">
+        <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+        <input type="submit" name="update" value="Update" class="btn btn-warning">
 
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
