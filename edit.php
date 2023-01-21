@@ -32,15 +32,15 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		//updating the table
-		$sql = "UPDATE users SET name=:name, age=:age, email=:email, cidade=:cidade WHERE id=:id";
-		$query = $conn->prepare($sql);
+		$stmt = $conn->prepare("UPDATE users SET name=:name, age=:age, email=:email, cidade=:cidade WHERE id=:id");
+		//$query = $conn->prepare($sql);
 				
-		$query->bindparam(':id', $id);
-		$query->bindparam(':name', $name);
-		$query->bindparam(':age', $age);
-		$query->bindparam(':email', $email);
-		$query->bindparam(':cidade', $cidade);
-		$query->execute();
+		$stmt->bindparam(':id', $id);
+		$stmt->bindparam(':name', $name);
+		$stmt->bindparam(':age', $age);
+		$stmt->bindparam(':email', $email);
+		$stmt->bindparam(':cidade', $cidade);
+		$stmt->execute();
 		
 		// Alternative to above bindparam and execute
 		// $query->execute(array(':id' => $id, ':name' => $name, ':email' => $email, ':age' => $age));
