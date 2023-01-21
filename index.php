@@ -12,6 +12,10 @@ $result = $conn->query("SELECT * FROM users ORDER BY id ASC");
     <title>Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    </svg>
 </head>
 
 <body>
@@ -37,7 +41,7 @@ $result = $conn->query("SELECT * FROM users ORDER BY id ASC");
 		echo "<td>".$row['email']."</td>";	
 		echo "<td>".$row['estados']."</td>";
 		echo "<td>".$row['cidade']. "</td>";
-		echo "<td><a href=\"edit.php?id=$row[id]\">Edit</a> | <a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+		echo "<td><a href=\"edit.php?id=$row[id]\">Update</a> | <a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete<i class=bi bi-trash3-fill'></i></a></td>";		
 	}
 	?>
     </table>
