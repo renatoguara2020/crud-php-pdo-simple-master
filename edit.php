@@ -57,6 +57,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 	$name = $row['name'];
 	$age = $row['age'];
 	$email = $row['email'];
+	$cidade = $row['cidade'];
 }
 ?>
 <html>
@@ -83,6 +84,8 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 
             <label class="form-label">Email</label>
             <input type="text" class="form-control" name="email" value="<?php echo $email;?>">
+            <label class="form-label">Cidade</label>
+            <input type="text" class="form-control" name="email" value="<?php echo $cidade;?>">
 
 
             <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
