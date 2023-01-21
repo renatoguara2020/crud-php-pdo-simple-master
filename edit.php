@@ -72,24 +72,22 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
     <br /><br />
 
     <form name="form1" method="post" action="edit.php">
-        <table class='table table-striped'>
-            <tr>
-                <td>Name</td>
-                <td><input type="text" class="form-control" name="name" value="<?php echo $name;?>"></td>
-            </tr>
-            <tr>
-                <td>Age</td>
-                <td><input type="text" class="form-control" name="age" value="<?php echo $age;?>"></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" class="form-control" name="email" value="<?php echo $email;?>"></td>
-            </tr>
-            <tr>
-                <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update" class="btn btn-warning"></td>
-            </tr>
-        </table>
+
+        <label class="form-label">Name</label>
+        <<input type="text" class="form-control" name="name" value="<?php echo $name;?>">
+
+
+            <label class="form-label">Age</label>
+            <input type="text" class="form-control" name="age" value="<?php echo $age;?>">
+
+
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" name="email" value="<?php echo $email;?>">
+
+
+            <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+            <input type="submit" name="update" value="Update" class="btn btn-warning">
+
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
