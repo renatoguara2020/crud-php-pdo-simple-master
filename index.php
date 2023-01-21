@@ -3,7 +3,7 @@
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
-$result = $conn->query("SELECT * FROM users ORDER BY id DESC");
+$result = $conn->query("SELECT * FROM users ORDER BY id ASC");
 ?>
 
 <html>
@@ -20,14 +20,16 @@ $result = $conn->query("SELECT * FROM users ORDER BY id DESC");
     <table class="table table-striped table-hover">
 
         <thead>
+            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Email</th>
-            <th scope="col">Update</th>
+            <th scope="col">Update | Delete</th>
         </thead>
         <?php 	
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		
 		echo "<tr>";
+		echo "<td>".$row['id']. "</td>";
 		echo "<td>".$row['name']."</td>";
 		echo "<td>".$row['age']."</td>";
 		echo "<td>".$row['email']."</td>";	
