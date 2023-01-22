@@ -10,9 +10,9 @@ include_once('ExamplePDOConnection.php');
     $email = $_POST['email'];
     $cidade = $_POST['cidade'];
 
-if(empty($nome) || empty ($email) || empty ($cidade) || empty ($idade)){
+if(empty($nome) || empty($email) || empty($cidade) || empty($idade)){
 
-    if(empty($nome)){
+    if(!isset($nome)){
 
         echo '<div class="alert alert-danger"> Digite seu nome </div>';
     }
