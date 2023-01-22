@@ -6,8 +6,10 @@ $pass = '';
 try{
 
 $conn = new PDO("mysql:host=localhost;dbname=test1", $user, $pass);
-$stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+echo 'Connected Successfully with Database';
 
 }catch(PDOException $e){
 
