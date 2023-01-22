@@ -67,7 +67,7 @@ $query->execute(array(':id' => $id));
 while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
    $nome = $row["nome"];
-   $age = $row["idade"];
+   $idade = $row["idade"];
    $email = $row["email"];
    $cidade = $row["cidade"];
     
