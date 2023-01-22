@@ -1,17 +1,21 @@
-<?php
+<?php 
+include_once('ExamplePDOConnection.php');
 
-$user = 'root';
-$pass = '';
 
-try{
+$id = $_GET["id"];
 
-$conn = new PDO("mysql:host=localhost;dbname=test1", $user, $pass);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$sql = "SELECT * FROM users WHERE id=:id";
 
-echo 'Connected Successfully with Database';
+$query = $conn->prepare($sql);
+$query->execute(array('id' => $id));
 
-}catch(PDOException $e){
+while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
-    echo "Error: " . $e->getMessage() . ' '. $e->getTraceAsString();
+   $nome = $row["nome"];
+   $age = $row["age"];
+   $email = $row["email"];
+   $cidade = $row["cidade"];
+    
 }
+
+?>
