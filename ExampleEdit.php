@@ -33,6 +33,9 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
 }else{
 
     $stmt->$conn->prepare('UPDATE users SET nome=:nome, email=:email,cidade:cidade, idade=:idade WHERE id=:id');
+
+    $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 }
  }
 
@@ -65,10 +68,6 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
 
 
 
-
-
-
-
 $id = $_GET["id"];
 
 $sql = "SELECT * FROM users WHERE id=:id";
@@ -85,7 +84,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
     
 }
 
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -102,18 +101,21 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
     <form action="ExampleEdit.php" method="post">
         <label class="form-label">Nome:</label>
         <input type="text" name="nome" class="form-control" value="<?php echo $nome; ?>"
-placeholder="Digite seu Nome" />
-<label class="form-label">Email:</label>
-<input type="text" name="email" class="form-control" value="<?php echo $email; ?>" placeholder="Digite seu Email" />
-<label class="form-label">Idade</label>
-<input type="text" name="idade" class="form-control" value="<?php echo $idade; ?>" placeholder="Digite seu Idade" />
-<label class="form-label">Cidade</label>
-<input type="text" name="cidade" class="form-control" value="<?php echo $cidade; ?>" placeholder="Digite sua cidade" />
+            placeholder="Digite seu Nome" />
+        <label class="form-label">Email:</label>
+        <input type="text" name="email" class="form-control" value="<?php echo $email; ?>"
+            placeholder="Digite seu Email" />
+        <label class="form-label">Idade</label>
+        <input type="text" name="idade" class="form-control" value="<?php echo $idade; ?>"
+            placeholder="Digite seu Idade" />
+        <label class="form-label">Cidade</label>
+        <input type="text" name="cidade" class="form-control" value="<?php echo $cidade; ?>"
+            placeholder="Digite sua cidade" />
 
-<input type="hidden" name="id" value="<?php $_GET['id']; ?>" />
+        <input type="hidden" name="id" value="<?php $_GET['id']; ?>" />
 
-<input type="submit" name="Update" value="Update" class="btn btn-warning" />
-</form>
+        <input type="submit" name="Update" value="Adicionar" class="btn btn-warning" />
+    </form>
 </body>
 
 </html>
