@@ -36,6 +36,12 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
 
     $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->bindParam(':cidade', $cidade, PDO::PARAM_STR);
+    $stmt->bindParam(':idade', $idade, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    header("Location: index.php");
 }
  }
 
