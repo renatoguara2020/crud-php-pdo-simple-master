@@ -1,6 +1,52 @@
 <?php 
 include_once('ExamplePDOConnection.php');
 
+ if(isset($_POST['Update'])){
+
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $cidade = $_POST['cidade'];
+
+if(empty ($_POST['nome']) || empty ($_POST['email']) || empty ($_POST['cidade'])){
+
+    if(empty($nome)){
+
+        echo '<div class="alert alert-danger"> Digite seu nome </div>';
+    }
+
+}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $id = $_GET["id"];
 
