@@ -5,16 +5,34 @@ include_once('ExamplePDOConnection.php');
 
     $id = $_POST['id'];
     $nome = $_POST['nome'];
+    $idade = $_POST['idade'];
     $email = $_POST['email'];
     $cidade = $_POST['cidade'];
 
-if(empty ($_POST['nome']) || empty ($_POST['email']) || empty ($_POST['cidade'])){
+if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
 
     if(empty($nome)){
 
         echo '<div class="alert alert-danger"> Digite seu nome </div>';
     }
+    if(empty($email)){
 
+        echo '<div class="alert alert-danger"> Digite seu Email</div>';
+    }
+
+    if(empty($idade)){
+
+        echo '<div class="alert alert-danger">Digite a sua Idade</div>';
+    }
+
+    if(empty($idade)){
+
+        echo '<div class="alert alert-danger"> Digite sua Idade</div>';
+    }
+
+}else{
+
+    $stmt->$conn->prepare('UPDATE users SET nome=:nome, email=:email,cidade:cidade, idade=:idade WHERE id=:id');
 }
  }
 
@@ -40,7 +58,10 @@ if(empty ($_POST['nome']) || empty ($_POST['email']) || empty ($_POST['cidade'])
 
 
 
+?>
 
+
+<?php
 
 
 
@@ -64,7 +85,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
     
 }
 
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,18 +102,18 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
     <form action="ExampleEdit.php" method="post">
         <label class="form-label">Nome:</label>
         <input type="text" name="nome" class="form-control" value="<?php echo $nome; ?>"
-            placeholder="Digite seu Nome" />
-        <label class="form-label">Email:</label>
-        <input type="text" name="email" class="form-control" value="<?php echo $email; ?>"
-            placeholder="Digite seu Email" />
-        <label class="form-label">Cidade</label>
-        <input type="text" name="cidade" class="form-control" value="<?php echo $cidade; ?>"
-            placeholder="Digite sua cidade" />
+placeholder="Digite seu Nome" />
+<label class="form-label">Email:</label>
+<input type="text" name="email" class="form-control" value="<?php echo $email; ?>" placeholder="Digite seu Email" />
+<label class="form-label">Idade</label>
+<input type="text" name="idade" class="form-control" value="<?php echo $idade; ?>" placeholder="Digite seu Idade" />
+<label class="form-label">Cidade</label>
+<input type="text" name="cidade" class="form-control" value="<?php echo $cidade; ?>" placeholder="Digite sua cidade" />
 
-        <input type="hidden" name="id" value="<?php $_GET['id']; ?>" />
+<input type="hidden" name="id" value="<?php $_GET['id']; ?>" />
 
-        <input type="submit" name="Update" value="Update" class="btn btn-warning" />
-    </form>
+<input type="submit" name="Update" value="Update" class="btn btn-warning" />
+</form>
 </body>
 
 </html>
