@@ -31,7 +31,8 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
 </head>
 
 <body>
-
+    <label class="form-label">Nome:</label>
+    <input type="text" name="nome" class="form-control" value="<?php echo $nome; ?>" placeholder="Digite seu Nome" />
 </body>
 
 </html>
