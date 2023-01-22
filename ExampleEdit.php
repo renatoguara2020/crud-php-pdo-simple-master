@@ -27,7 +27,7 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
 
     if(empty($cidade)){
 
-        echo '<div class="alert alert-danger"> Digite sua Idade</div>';
+        echo '<div class="alert alert-danger"> Digite sua Cidade</div>';
     }
 
 }else{
