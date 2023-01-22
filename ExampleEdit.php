@@ -25,7 +25,7 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
         echo '<div class="alert alert-danger">Digite a sua Idade</div>';
     }
 
-    if(empty($idade)){
+    if(empty($cidade)){
 
         echo '<div class="alert alert-danger"> Digite sua Idade</div>';
     }
@@ -84,7 +84,7 @@ $query->execute(array('id' => $id));
 while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
    $nome = $row["nome"];
-   $age = $row["age"];
+   $age = $row["idade"];
    $email = $row["email"];
    $cidade = $row["cidade"];
     
