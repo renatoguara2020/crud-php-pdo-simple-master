@@ -16,17 +16,17 @@ if(empty($nome) || empty($email) || empty($cidade) || empty($idade)){
 
         echo '<div class="alert alert-danger"> Digite seu nome </div>';
     }
-    if(empty($email)){
+    if(!isset($email)){
 
         echo '<div class="alert alert-danger"> Digite seu Email</div>';
     }
 
-    if(empty($idade)){
+    if(!isset($idade)){
 
         echo '<div class="alert alert-danger">Digite a sua Idade</div>';
     }
 
-    if(empty($cidade)){
+    if(!isset($cidade)){
 
         echo '<div class="alert alert-danger"> Digite sua Cidade</div>';
     }
