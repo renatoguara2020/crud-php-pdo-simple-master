@@ -112,5 +112,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
 
 echo "<a href=\"edit.php?id=$row[id]\">Update</a> | <a href=\"delete.php?id=$row[id]\">Delete</a>";
-<a href="delete.php?id=$row['id']"></a>
-<a href="edit.php?id=$row['id']"></a>
+<a href="delete.php?id=$row['id']">Delete</a>
+<a href="edit.php?id=$row['id']">Update</a>
+
+$sql = "INSERT INTO users () VALUES ()";
