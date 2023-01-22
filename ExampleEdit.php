@@ -33,7 +33,9 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
 }else{
 
     $stmt->$conn->prepare('UPDATE users SET nome=:nome, email=:email,cidade:cidade, idade=:idade WHERE id=:id');
+     
 
+    $stmt->bindParam(':id', $id);
     $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->bindParam(':cidade', $cidade, PDO::PARAM_STR);
@@ -44,26 +46,6 @@ if(empty('nome') || empty ('email') || empty ($cidade) || empty ($idade)){
     header("Location: index.php");
 }
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -79,7 +61,7 @@ $id = $_GET["id"];
 $sql = "SELECT * FROM users WHERE id=:id";
 
 $query = $conn->prepare($sql);
-$query->execute(array('id' => $id));
+$query->execute(array(':id' => $id));
 
 while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
@@ -99,7 +81,9 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<title>Document</title>
 </head>
 
 <body>
@@ -125,3 +109,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)){
 </body>
 
 </html>
+
+
+<a href=\"edit.php?id=$row[id]\">Update</a> | <a href=\"delete.php?id=$row[id]\">Delete</a>
+<a href="delete.php?id=$row['id']"></a>
