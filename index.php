@@ -25,7 +25,7 @@ $result = $conn->query("SELECT * FROM users ORDER BY id ASC");
         <thead>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Age</th>
+            <th scope="col">Idade</th>
             <th scope="col">Email</th>
             <th scope="col">Estados</th>
             <th scope="col">Cidade</th>
